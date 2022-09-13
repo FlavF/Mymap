@@ -13,7 +13,7 @@
 ### General Info
 
 ---
-Get the coordinates from an address and then get the map marker.
+Get the coordinates from an address and then get the map and marker.
 <br/>
 
 ### Stacks
@@ -49,24 +49,62 @@ You need to create an account to get the coordinates (long, lat) from the addres
 
 And for the map, I used : https://github.com/mapbox/mapbox-gl-js 
 
-Copy the folders or the repository :
+Copy the files or the repository :
 - tsconfig.son
 - src/app.ts
 - app.css
 - index.html
 - webpack.config.js
 
-Just need to do on terminal :
+To see the project, on terminal :
 - npm run build
 - npm start
 - and check on http://localhost:8080/
 
 <br/>
 
-#### Folders to update
+#### Files to update
 
-- .env :  put you API_KEY and MAP_KEY in the folder
+- .env : add API_KEY and MAP_KEY
 
+
+- webpack.config.js
+
+```
+const DotenvWebpackPlugin = require("dotenv-webpack");
+const path = require("path")
+
+module.exports = {
+	mode: "development",
+	entry: "./src/app.ts",
+	output: {
+		filename: "bundle.js",
+		path: path.resolve(__dirname, "dist"),
+		publicPath: "dist",
+	},
+	devtool: "inline-source-map",
+	module: {
+		rules: [
+			{
+				test: /\.ts$/,
+				use: "ts-loader",
+				exclude: /node_modules/,
+			},
+		],
+	},
+	resolve: {
+		extensions: [".ts", ".js"],
+	},
+	devServer: {
+		static: {
+			directory: path.join(__dirname, './'),
+		},
+	},
+	plugins: [
+		new DotenvWebpackPlugin(),
+	]
+};
+```
 
 ### Use
 
