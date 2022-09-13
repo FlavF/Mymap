@@ -13,9 +13,7 @@
 ### General Info
 
 ---
-
-From address, get the coordinates and then give it to the map
-
+Get the coordinates from an address and then get the map marker.
 <br/>
 
 ### Stacks
@@ -34,9 +32,9 @@ Architecture MVC
 Modules / Librairies :
 
 - [Webpack](https://webpack.js.org/) Version 5.74.0
-- [webpack-cli] Version 4.10.0
+- [webpack-cli]() Version 4.10.0
 - [webpack-dev-server](https://www.npmjs.com/package/webpack-dev-server) Version 4.10.0
-- [axios] (https://www.npmjs.com/package/axios) Version 0.27.2
+- [axios](https://www.npmjs.com/package/axios) Version 0.27.2
 - [dotenv-webpack](https://www.npmjs.com/package/dotenv-webpack)
 
 <br/>
@@ -74,7 +72,7 @@ Just need to do on terminal :
 
 ---
 
-Just say your address in the form and validate the button with a click.
+Just give your address in the form and validate the button with a click.
 
 <br/>
 
